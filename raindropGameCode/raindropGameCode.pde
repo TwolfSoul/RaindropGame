@@ -1,4 +1,4 @@
-int fall = 300;
+int fall = 500;
 PVector mouse;   //declare a P
 Raindrop[]r = new Raindrop[fall];
 
@@ -10,25 +10,26 @@ Raindrop[]r = new Raindrop[fall];
 
 void setup() {
   size(1200, 800);
+  mouse = new PVector();
   for (int i = 0; i < fall; i++)
   {      
-  r[i] = new Raindrop(random(width), 0);
+  r[i] = new Raindrop(random(width), random(-1000,0));
   }
 }
 
 void draw() {
   mouse.set(mouseX, mouseY);
-  background(0, 200, 255);
+  background(0);
   for (int i = 0; i < fall; i++)
   {
   r[i].fall();
   r[i].display();
-  if (r[i].isInContactWith(mouse)) {
-    r[i].reset();                         
-  }
-  if (r[i].loc.y > height + r.diam/2) {
-    r[i].reset();
-  }
+ // if (r[i].isInContactWith(mouse)) {
+ //   r[i].reset();                         
+ // }
+ // if (r[i].loc.y > height + r.diam/2) {
+ //   r[i].reset();
+ // }
   }
 }
 

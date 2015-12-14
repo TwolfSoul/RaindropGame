@@ -1,18 +1,16 @@
 class Raindrop {
-  PVector mouse;
   PVector loc;
-  PVector grav;
-  PVector accel;
+  PVector vel;
+  //PVector accel;
   int diam;
   color c;
 
-  Raindrop()
+  Raindrop(float x, float y)
   {
-    diam = 15;
-    mouse = new PVector();  
-    loc = new PVector (random(width), -100);
-    grav = new PVector (2, 0);
-    accel = new PVector (0.01,0);
+    diam = 15;  
+    loc = new PVector (x, y);
+    vel = new PVector (0,random(8,20));
+    //accel = new PVector (0.01,0);
     c = color(153, 255, 255);
   }
 
@@ -23,9 +21,10 @@ class Raindrop {
   }
 
   void fall() {
-    loc.add(grav);
-    grav.add(accel);
+    loc.add(vel);
+    //vel.add(accel);
   }
   
- void isInContactWith() {
+ //void isInContactWith() {
    
+ }
