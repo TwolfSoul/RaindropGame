@@ -25,6 +25,13 @@ class Raindrop {
     //vel.add(accel);
   }
   
- //void isInContactWith() {
-   
+ boolean isInContactWith(PVector killer) {
+   if(loc.dist(killer) < diam/2) {
+     return true;
+   } else {
+     return false;
+   }
  }
+}
+
+void reset() {
