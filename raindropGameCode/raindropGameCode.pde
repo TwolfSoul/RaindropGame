@@ -11,8 +11,7 @@ Raindrop[]r = new Raindrop[fall];
 void setup() {
   size(1200, 800);
   for (int i = 0; i < fall; i++)
-  {
-  mouse = new PVector();        
+  {      
   r[i] = new Raindrop(random(width), 0);
   }
 }
