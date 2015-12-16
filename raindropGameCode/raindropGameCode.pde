@@ -1,6 +1,7 @@
 int fall = 500;
 PVector mouse;   //declare a P
 Raindrop[]r = new Raindrop[fall];
+catCher k;
 
 // On your own, create an array of Raindrop objects instead of just one
 // Use the array instead of the single object
@@ -15,10 +16,12 @@ void setup() {
   {      
     r[i] = new Raindrop(random(width), random(-1000, 0));
   }
+  k = new catCher(mouseX, mouseY);
 }
 
 void draw() {
   mouse.set(mouseX, mouseY);
+  k.update();
   background(255);
   for (int i = 0; i < fall; i++)
   {
@@ -31,6 +34,8 @@ void draw() {
       r[i].reset();
     }
   }
+  k.display();
+  
 }
 
 //make the raindrop fall. It should accelerate as if pulled towards the ground by earth's gravity
