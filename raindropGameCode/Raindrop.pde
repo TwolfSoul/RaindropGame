@@ -1,17 +1,15 @@
 class Raindrop {
   PVector loc;
   PVector vel;
-  //PVector accel;
   int diam;
   color c;
 
   Raindrop(float x, float y)
   {
-    diam = 15;  
+    diam = 5;  
     loc = new PVector (x, y);
-    vel = new PVector (0,random(8,20));
-    //accel = new PVector (0.01,0);
-    c = color(153, 255, 255);
+    vel = new PVector (0, random(8, 10));
+    c = color(20, 50, 255);
   }
 
   void display() {
@@ -22,16 +20,17 @@ class Raindrop {
 
   void fall() {
     loc.add(vel);
-    //vel.add(accel);
+  }
+
+  boolean isInContactWith(PVector killer) {
+    if (loc.dist(killer) < diam/2) {
+      return true;
+    } else {
+      return false;
+    }
   }
   
- boolean isInContactWith(PVector killer) {
-   if(loc.dist(killer) < diam/2) {
-     return true;
-   } else {
-     return false;
-   }
- }
+  void reset(){
+    loc.set(random(width), random(-1000, 0));
 }
-
-void reset() {
+}

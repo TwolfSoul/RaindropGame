@@ -13,23 +13,23 @@ void setup() {
   mouse = new PVector();
   for (int i = 0; i < fall; i++)
   {      
-  r[i] = new Raindrop(random(width), random(-1000,0));
+    r[i] = new Raindrop(random(width), random(-1000, 0));
   }
 }
 
 void draw() {
   mouse.set(mouseX, mouseY);
-  background(0);
+  background(255);
   for (int i = 0; i < fall; i++)
   {
-  r[i].fall();
-  r[i].display();
- // if (r[i].isInContactWith(mouse)) {
- //   r[i].reset();                         
- // }
- // if (r[i].loc.y > height + r.diam/2) {
- //   r[i].reset();
- // }
+    r[i].fall();
+    r[i].display();
+    if (r[i].isInContactWith(mouse)) {
+      r[i].reset();
+    }
+    if (r[i].loc.y > height + r[i].diam/2) {
+      r[i].reset();
+    }
   }
 }
 
