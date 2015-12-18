@@ -1,7 +1,8 @@
-int fall = 500;
+int fall = 5000;
 PVector mouse;   //declare a P
 Raindrop[]r = new Raindrop[fall];
 catCher k;
+//ArrayList<Raindrop> r = new ArrayList<Particle>();
 
 // On your own, create an array of Raindrop objects instead of just one
 // Use the array instead of the single object
@@ -27,7 +28,7 @@ void draw() {
   {
     r[i].fall();
     r[i].display();
-    if (r[i].isInContactWith(mouse)) {
+    if (r[i].isInContactWith(k)) {
       r[i].reset();
     }
     if (r[i].loc.y > height + r[i].diam/2) {

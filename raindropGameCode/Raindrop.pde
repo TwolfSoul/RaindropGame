@@ -1,7 +1,7 @@
 class Raindrop {
-  PVector loc;
-  PVector vel;
+  PVector loc, vel, accel;
   int diam;
+  float hue, sat, bright, alpha;
   color c;
 
   Raindrop(float x, float y)
@@ -22,8 +22,8 @@ class Raindrop {
     loc.add(vel);
   }
 
-  boolean isInContactWith(PVector killer) {
-    if (loc.dist(killer) < diam/2) {
+  boolean isInContactWith(catCher killer) {
+    if (loc.dist(killer.loc) < diam/2+killer.diam/2) {
       return true;
     } else {
       return false;
