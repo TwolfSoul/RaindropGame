@@ -2,7 +2,7 @@ int fall = 5000;
 PVector mouse;   //declare a P
 Raindrop[]r = new Raindrop[fall];
 catCher k;
-//ArrayList<Raindrop> r = new ArrayList<Particle>();
+//ArrayList<Raindrop> raindrop = new ArrayList<Raindrop>();
 
 // On your own, create an array of Raindrop objects instead of just one
 // Use the array instead of the single object
