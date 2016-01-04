@@ -5,14 +5,14 @@ class catCher {
 
   catCher(float x, float y)
   {
-    diam = 150;  
-    //c = color(0);
+    diam = 100;  
+    c = color(164,129,76);
     loc = new PVector (x, y);
   }
 
   void display() {
-    noFill();
-    stroke(0);
+    fill(c);
+    stroke(97,69,27);
     ellipse(loc.x, loc.y, diam, diam);
   }
 

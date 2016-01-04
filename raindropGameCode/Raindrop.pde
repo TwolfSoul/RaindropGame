@@ -1,14 +1,14 @@
 class Raindrop {
   PVector loc, vel, accel;
-  int diam;
+  float diam;
   float hue, sat, bright, alpha;
   color c;
 
   Raindrop(float x, float y)
   {
-    diam = 20;  
+    diam = random(30);  
     loc = new PVector (x, y);
-    vel = new PVector (0, random(8, 10));
+    vel = new PVector (0, random(6, 8 ));
     c = color(255, 0, 0);
   }
 
@@ -32,6 +32,6 @@ class Raindrop {
   }
   
   void reset(){
-    loc.set(random(600), random(-1000, 0));
+    loc.set(random(200,500), random(-1000, 0));
 }
 }

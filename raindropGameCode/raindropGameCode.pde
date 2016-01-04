@@ -7,16 +7,15 @@ ArrayList<Raindrop> raindrop = new ArrayList<Raindrop>();
 void setup() {
   size(1200, 800);
   mouse = new PVector();
-  raindrop.add(new Raindrop(random(600), random(-1000, 0)));
+  raindrop.add(new Raindrop(random(200,500), random(-1000, 0)));
   k = new catCher(mouseX, mouseY);
 }
 
 void draw() {
-  println(raindrop.size());
+  background(204,255,204);
   mouse.set(mouseX, mouseY);
   k.update();
-  background(255);
-  raindrop.add(new Raindrop(random(600), random(-1000, 0)));
+  raindrop.add(new Raindrop(random(200,500), random(-1000, 0)));
   for (int i = raindrop.size()-1; i >= 0; i--)
   {
     Raindrop r = raindrop.get(i);
